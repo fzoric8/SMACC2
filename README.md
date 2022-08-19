@@ -254,8 +254,8 @@ cd userspace-rcu
 ./bootstrap # skip if using tarball
 ./configure
 make
-make install
-ldconfig
+sudo make install
+sudo ldconfig
 ```
 
 Clone and install lttng-ust: 
@@ -263,10 +263,10 @@ Clone and install lttng-ust:
 git clone git@github.com:lttng/lttng-ust.git
 cd lttng-ust
 ./bootstrap 
-./configure 
+./configure --prefix=/usr --disable-man-pages
 make 
-make install 
-ldconfig
+sudo make install 
+sudo ldconfig
 ```
 
 Happy Coding!
