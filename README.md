@@ -240,6 +240,35 @@ To use it go to the `src` folder of your ROS2 workspace and execute:
 After than compile your workspace and source it to set paths of the new package.
 Check `README.md` in new package about instructions to start newly created state machine.
 
+## Build steps
+
+Build steps for SMACC2 are following: 
+```
+sudo apt-get install libtool 
+```
+
+Clone and install Userspace RCU:
+```
+git clone git://git.liburcu.org/userspace-rcu.git
+cd userspace-rcu
+./bootstrap # skip if using tarball
+./configure
+make
+make install
+ldconfig
+```
+
+Clone and install lttng-ust: 
+```
+git clone git@github.com:lttng/lttng-ust.git
+cd lttng-ust
+./bootstrap 
+./configure 
+make 
+make install 
+ldconfig
+```
+
 Happy Coding!
 
 ## Support
