@@ -32,8 +32,11 @@ class SmaccServiceClient : public smacc2::ISmaccClient
 {
 public:
   std::optional<std::string> serviceName_;
+  typedef ServiceType TServiceType; 
 
   SmaccServiceClient() { initialized_ = false; }
+
+  SmaccServiceClient(std::string servicename) { serviceName_ = servicename; }
 
   void onInitialize() override
   {
